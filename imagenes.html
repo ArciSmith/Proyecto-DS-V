@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Proyecto DS-V</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+
+<body>
+	<header id="header">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="logo.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll"><a href="index.html">Home</a></li>
+                        <li class="scroll"><a href="imagenes.html">imagenes</a></li>
+                        <li class="scroll"><a href="videos.html">Videos</li>
+                        <li class="scroll"><a href="acerca de.html">Acerca de</a></li>
+                        <li class="scroll"><a href="equipo.html">Equipo</a></li>
+                        <li class="scroll"><a href="contactos.html">Contáctanos</a></li>        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+
+
+
+    
+     
+
+    <section> <!-- seccion de portafolio -->
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Nuestra Huella</h2>
+                <h4 class="text-center wow fadeInDown">Emprendimientos, cientes corporativos, apps móviles, web apps y mucho más</h4>
+            </div>
+
+            
+            <div class="portfolio-items">
+            <% @projects.each do |project| %>
+                <div class="portfolio-item creative">
+                    <div class="portfolio-item-inner">
+                        <% if project.image %>
+                        <%= image_tag(project.image.url,:class => "img-responsive")%> 
+                        <% end %>
+                        <div class="portfolio-info">
+                            <h3><%= project.client%></h3>
+                             <%= project.description%>
+                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+            <% end %>
+         
+            </div>
+        </div><!--/.container-->
+    </section><!--/#portfolio-->
+
+ <section> <!-- section de trabajo -->
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Nuestro Proceso</h2>
+                <h3 class="text-center wow fadeInDown">Cómo se materializa tu idea</h3>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="icon-circle">
+                            <span>1</span>
+                            <i class="fa fa-coffee fa-2x"></i>
+                        </div>
+                        <h3>Conversemos la idea</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="icon-circle">
+                            <span>2</span>
+                            <i class="fa fa-calendar fa-2x"></i>
+                        </div>
+                        <h3>Planifiquemos: User Stories</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="icon-circle">
+                            <span>3</span>
+                            <i class="fa fa-mobile fa-2x"></i>
+                        </div>
+                        <h3>Diseñemos la solución: Mockups</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="icon-circle">
+                            <span>4</span>
+                            <i class="fa fa-code fa-2x"></i>
+                        </div>
+                        <h3>Desarrollemos</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms">
+                        <div class="icon-circle">
+                            <span>5</span>
+                            <i class="fa fa-pencil fa-2x"></i>
+                        </div>
+                        <h3>Demo y Feedback</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">
+                        <div class="icon-circle">
+                            <span>6</span>
+                            <i class="fa fa-repeat fa-2x"></i>
+                        </div>
+                        <h3>Repite</h3>
+                    </div>
+                </div>
+                  <div class="col-md-2 col-md-12 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">
+                        <div class="icon-circle">
+                            <span>7</span>
+                            <i class="fa fa-plane fa-2x"></i>
+                        </div>
+                        <h3>Lanzemos</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#work-process-->
+
+
+<div class="divider"></div>
+
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2017 Proyecto utp, S.A.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/"  target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company-beta/16204475/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+
+	<script type="text/javascript" crs="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" crs="js/bootstrap.min.js"></script>	
+</body>
+</html>
